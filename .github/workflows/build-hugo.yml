@@ -38,7 +38,7 @@ jobs:
         run: git clone https://github.com/dzello/reveal-hugo/ slides\themes\reveal-hugo
       
       - name: cd to website
-        run: slides
+        run: cd slides
 
       - name: Build website
         run: hugo
