@@ -46,7 +46,10 @@ jobs:
         working-directory: slides
 
       - name: push website
-        run: git checkout gh-pages |
-             git add slides/public/* |
-             git commit -m "auto push from github"
+        run: | 
+            git config --global user.email "psarras.st@gmail.com"
+            git config --global user.name "spsarras"
+            git checkout gh-pages
+            git add slides/public/*
+            git commit -m "auto push from github"
         
