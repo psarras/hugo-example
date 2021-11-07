@@ -1,4 +1,4 @@
-# This is a basic workflow to help you get started with Actions
+   # This is a basic workflow to help you get started with Actions
 
 name: CI
 
@@ -25,6 +25,18 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
       - name: Install Hugo
         run: brew install hugo
+      
+      - name: Create basic website
+        run: hugo new slides
+      
+      - name: Create mkdir
+        run: mkdir slides\themes\reveal-hugo
+      
+      - name: Clone Reveal Theme
+        run: git clone https://github.com/dzello/reveal-hugo/ slides\themes\reveal-hugo
+        
+      - name: Build website
+        run: hugo
+        
