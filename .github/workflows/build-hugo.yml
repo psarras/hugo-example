@@ -51,12 +51,13 @@ jobs:
             git config --global user.name "spsarras"
             git config pull.rebase false
             
-            git fetch
-            git checkout -b gh-pages
-            git branch --set-upstream-to=origin/gh-pages gh-pages
+            git fetch --all # Fetch all branches
+            
+            git checkout gh-pages
+            #git branch --set-upstream-to=origin/gh-pages gh-pages
             git pull
             git add slides/public/*
             git commit -m "auto push from github"
             
-            git push --set-upstream origin gh-pages
+            git push #--set-upstream origin gh-pages
         
