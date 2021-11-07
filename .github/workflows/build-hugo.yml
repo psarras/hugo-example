@@ -44,4 +44,9 @@ jobs:
       - name: Build website
         run: hugo
         working-directory: slides
+
+      - name: push website
+        run: git checkout gh-pages |
+             git add slides/public/* |
+             git commit -m "auto push from github"
         
