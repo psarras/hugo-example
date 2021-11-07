@@ -49,9 +49,10 @@ jobs:
         run: | 
             git config --global user.email "psarras.st@gmail.com"
             git config --global user.name "spsarras"
+            git fetch
             git checkout -b gh-pages
             git branch --set-upstream-to=origin/gh-pages gh-pages
-            git pull
+            git pull -u
             git add slides/public/*
             git commit -m "auto push from github"
             git push --set-upstream origin gh-pages
