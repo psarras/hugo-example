@@ -52,5 +52,5 @@ jobs:
             git checkout -b gh-pages
             git add slides/public/*
             git commit -m "auto push from github"
-            git push
+            git push --set-upstream origin gh-pages
         
